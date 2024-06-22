@@ -1,0 +1,118 @@
+#div1 {
+    width: 500px;
+    height: 300px;
+   
+    overflow: visible; /* Allow overflow to show falling flowers */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: 700px;
+    margin-top: 0px;
+    position: relative;
+    z-index: 1; /* Ensure it's on a higher layer */
+}
+
+.pic {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: -50px;
+    animation: fall 5s ease-in-out forwards;
+    z-index: 2; /* Ensure flowers are above other elements */
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        top: 300px; /* Fall beyond #div1 and into #div2 */
+        transform: translateX(var(--random-x)) translateY(var(--random-y));
+    }
+}
+
+#div2 {
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin-left: 700px;
+    margin-top: 0px;
+    position: relative; /* Make it a containing block for absolute positioning */
+    z-index: 0; /* Ensure it's below the flowers */
+}
+
+.img2 {
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    background-blend-mode: multiply;
+}
+
+
+#numberInput, #btn
+{
+    background-color: #AEC289;
+    color: black;
+    font-weight: 500;
+    width: 150px;
+    border:0;
+    padding: 10px;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    
+    
+}
+#numberInput
+{
+    margin-left: 800px;
+
+}
+#btn
+{
+   
+}
+
+h1
+{margin-left: 780px;
+    font-family: 'poppins', sans-serif;
+    font: 600;
+    color: #CD4662;
+
+
+}
+
+body{
+    background-color: #F4F2EF;
+}
+
+
+@media screen and (max-width: 767px) {
+    #div1, #div2 {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    #numberInput {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
